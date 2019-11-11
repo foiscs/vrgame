@@ -62,12 +62,11 @@ public class RecodingNode : MonoBehaviour
         node.time = audioSource.time;
 
         if (nodes.Count == 0 || !nodes.Exists(x => x.time > node.time))
-            nodes.Add(node);
+            NodeList.Instance.nodes.Add(node);
         else
         {
-            nodes.IndexOf(node, nodes.FindLastIndex(x => x.time <= node.time) + 1);
+            NodeList.Instance.nodes.IndexOf(node, NodeList.Instance.nodes.FindLastIndex(x => x.time <= node.time) + 1);
         }
-        Debug.Log(nodes.Count);
     }
     public void save()
     {
@@ -88,10 +87,10 @@ public class RecodingNode : MonoBehaviour
                 path = item.FullName + "/" + audioName + ".beatmap";
         }
         BinaryWriter bw = new BinaryWriter(File.Open(path, FileMode.Create));
-        for (int i = 0; i < nodes.Count; i++)
+        for (int i = 0; i < NodeList.Instance.nodes.Count; i++)
         {
-            bw.Write(nodes[i].drumNum);
-            bw.Write(nodes[i].time);
+            bw.Write(NodeList.Instance.nodes[i].drumNum);
+            bw.Write(NodeList.Instance.nodes[i].time);
         }
         bw.Close();
         
@@ -115,6 +114,8 @@ public class RecodingNode : MonoBehaviour
                     Node node = new Node();
                     node.drumNum = br.ReadInt32();
                     node.time = br.ReadSingle();
+
+                    NodeList.Instance.nodes.Add(node);
                 }
                 catch(EndOfStreamException e)
                 {

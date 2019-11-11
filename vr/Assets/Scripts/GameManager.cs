@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     public SteamVR_Input_Sources handType;
     public SteamVR_Action_Boolean Click;
 
+
+
     void Start()
     {
         DrumSet.transform.position = Camera.allCameras[0].transform.position + offset;
@@ -26,3 +28,5 @@ public class GameManager : MonoBehaviour
         }
     }
 }
+
+
