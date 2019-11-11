@@ -3,29 +3,34 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
-public class RecodingNode : MonoBehaviour
+using Valve.VR;
+public class EditorManager : MonoBehaviour
 {
-    public List<Node> nodes = new List<Node>();
+    public float bpm;
+    public float divider;
+    public float beatCount;
+    public float beatInterval;
+
+    public Transform parent;
+    public GameObject prefeb;
     public AudioSource audioSource;
-    
+
+    public float[] Line_X;
     DirectoryInfo dir;
-    private void Awake()
+    private void Start()
     {
+        bpm = UniBpmAnalyzer.AnalyzeBpm(audioSource.clip);
+        beatCount = (float)bpm / divider;
+        beatInterval = 1 / beatCount;
         dir = new DirectoryInfo(Application.dataPath + "/Resources/Music");
     }
-    void Start()
-    {
-        audioSource = GetComponent<AudioSource>();
-    }
-
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Z))
         {
             addNodes(0);
         }
-        if(Input.GetKeyDown(KeyCode.X))
+        if (Input.GetKeyDown(KeyCode.X))
         {
             addNodes(1);
         }
@@ -54,6 +59,7 @@ public class RecodingNode : MonoBehaviour
             addNodes(7);
         }
 
+        nodeMove();
     }
     void addNodes(int num)
     {
@@ -61,7 +67,7 @@ public class RecodingNode : MonoBehaviour
         node.drumNum = num;
         node.time = audioSource.time;
 
-        if (nodes.Count == 0 || !nodes.Exists(x => x.time > node.time))
+        if (NodeList.Instance.nodes.Count == 0 || !NodeList.Instance.nodes.Exists(x => x.time > node.time))
             NodeList.Instance.nodes.Add(node);
         else
         {
@@ -80,7 +86,7 @@ public class RecodingNode : MonoBehaviour
     public void saveNodes(string audioName)
     {
         DirectoryInfo dir = new DirectoryInfo(Application.dataPath + "/Resources/Music");
-        string path="";
+        string path = "";
         foreach (var item in dir.GetDirectories())
         {
             if (item.Name == audioName)
@@ -93,7 +99,7 @@ public class RecodingNode : MonoBehaviour
             bw.Write(NodeList.Instance.nodes[i].time);
         }
         bw.Close();
-        
+
     }
     public void LoadNodes(string audioName)
     {
@@ -107,17 +113,20 @@ public class RecodingNode : MonoBehaviour
         if (File.Exists(path))
         {
             BinaryReader br = new BinaryReader(File.Open(path, FileMode.Open));
-            while(true)
+            while (true)
             {
                 try
                 {
                     Node node = new Node();
                     node.drumNum = br.ReadInt32();
                     node.time = br.ReadSingle();
-
                     NodeList.Instance.nodes.Add(node);
+
+                    GameObject temp = Instantiate(prefeb,parent);
+                    temp.transform.localPosition = new Vector3(Line_X[node.drumNum], node.time);
+                    temp.GetComponent<box>().num = NodeList.Instance.nodes.Count - 1;
                 }
-                catch(EndOfStreamException e)
+                catch (EndOfStreamException e)
                 {
                     br.Close();
                     break;
@@ -126,4 +135,8 @@ public class RecodingNode : MonoBehaviour
         }
     }
 
+    public void nodeMove()
+    {
+        parent.transform.position = new Vector3(0, -audioSource.time);
+    }
 }

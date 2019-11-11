@@ -21,8 +21,4 @@ public class MapScrollView : MonoBehaviour
     {
         scrollbar.value = (slider.value / slider.maxValue);
     }
-    void SetNodePosition()
-    {
-       
-    }
 }
