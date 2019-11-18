@@ -17,7 +17,7 @@ public class AudioWaveFormVisualizer : MonoBehaviour
     }
     private void Start()
     {
-        Texture2D tex = PaintWaveformSpectrum(GetWaveform(GetComponent<AudioSource>().clip, 1500, 1f), 100, Color.green);
+        Texture2D tex = PaintWaveformSpectrum(GetWaveform(GetComponent<AudioSource>().clip, 1200, 1f), 100, Color.green);
 
         GetComponent<RawImage>().texture = tex;
     }
@@ -26,7 +26,9 @@ public class AudioWaveFormVisualizer : MonoBehaviour
         if (GetComponent<AudioSource>().time > 0)
             GetComponent<AudioSource>().UnPause();
         else
+        {
             GetComponent<AudioSource>().Play();
+        }
     }
     public void SetAudioSpeed()
     {

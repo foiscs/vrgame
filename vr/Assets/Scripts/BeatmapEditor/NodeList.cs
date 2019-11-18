@@ -7,6 +7,7 @@ public class NodeList : MonoBehaviour
     public static NodeList Instance = null;
 
     public List<Node> nodes = new List<Node>();
+    public List<bool> nodesPlayOne = new List<bool>();
     void Awake()
     {
         if (Instance == null)

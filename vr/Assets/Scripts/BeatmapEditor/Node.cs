@@ -6,7 +6,7 @@ public class Node : IEquatable<Node>
 {
     public int drumNum { get; set; }
     public float time { get; set; }
-
+    public bool play { get; set; }
     public override bool Equals(object obj)
     {
         if (obj == null)
