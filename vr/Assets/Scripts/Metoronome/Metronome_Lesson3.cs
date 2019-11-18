@@ -36,7 +36,6 @@ public class Metronome_Lesson3 : MonoBehaviour {
     private void Recalculate()
     {
         double beatsPerSecond = bpm / 60.0;
-        Debug.Log(beatsPerSecond);
         double ticksPerSecond = beatsPerSecond * _subdivisions;
         _tickLength = 1.0 / ticksPerSecond;
     }
