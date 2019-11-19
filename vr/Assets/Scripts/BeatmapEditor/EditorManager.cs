@@ -43,6 +43,8 @@ public class EditorManager : MonoBehaviour
     public Transform MusicSelectBlockParent;
 
     public Canvas MusicSelectCanvas;
+    public Canvas NodeAddCanvas;
+    GameObject Line;
     GraphicRaycaster gr;
     PointerEventData ped;
 
@@ -72,12 +74,12 @@ public class EditorManager : MonoBehaviour
     }
     private void Start()
     {
+        Line = GameObject.Find("Line");
+        Line.SetActive(false);
         gr = MusicSelectCanvas.GetComponent<GraphicRaycaster>();
         ped = new PointerEventData(null);
-        //bpm = UniBpmAnalyzer.AnalyzeBpm(audioSource.clip);
-        //GameObject.Find("Metronome").GetComponent<Metronome_Lesson3>().bpm = bpm;
-        //beatCount = (float)bpm / divider;
-        //beatInterval = 1 / beatCount;
+        MusicSelectCanvas.enabled = true;
+        NodeAddCanvas.enabled = false;
     }
     void Update()
     {
@@ -91,12 +93,19 @@ public class EditorManager : MonoBehaviour
             {
                 string musicName = obj.transform.GetChild(0).GetChild(1).GetComponent<TextMeshProUGUI>().text;
                 audioSource.clip = Resources.Load<AudioClip>("Music/" + musicName + "/" + musicName);
+                MusicSelectCanvas.enabled = false;
+                NodeAddCanvas.enabled = true;
+                Line.SetActive(true);
+                bpm = UniBpmAnalyzer.AnalyzeBpm(audioSource.clip);
+                GameObject.Find("Metronome").GetComponent<Metronome_Lesson3>().bpm = bpm;
+                beatCount = (float)bpm / divider;
+                beatInterval = 1 / beatCount;
+
             }
         }
 
         inputKey();
         nodeMove();
-        
     }
     void inputKey()
     {
@@ -306,6 +315,4 @@ public class EditorManager : MonoBehaviour
         }
         return null;                     // Return null if load failed
     }
-
-
 }

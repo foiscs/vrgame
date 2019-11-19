@@ -11,6 +11,8 @@ public class Metronome_Lesson3 : MonoBehaviour {
 
     [SerializeField, Tooltip("The tempo in beats per minute"), Range(15f, 200f)] private double _tempo = 120.0;
     [SerializeField, Tooltip("The number of ticks per beat"), Range(1, 8)] private int _subdivisions = 4;
+    [Range(4,32)]
+    public int beat = 4;
     public float bpm;
     public bool isPlay;
     public bool isPlayOnce;
@@ -71,6 +73,7 @@ public class Metronome_Lesson3 : MonoBehaviour {
         {
             if(!isPlayOnce)
             {
+                Debug.Log((4 / beat) / (bpm / 60));
                 Reset();
                 Recalculate();
                 isPlayOnce = true;

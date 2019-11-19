@@ -11,8 +11,6 @@ public class AudioUI : MonoBehaviour
     void Start()
     {
         audioSlider = GetComponent<Slider>();
-        audioSlider.minValue = 0;
-        audioSlider.maxValue = AudioWave.clip.length;
     }
 
     // Update is called once per frame
@@ -20,6 +18,12 @@ public class AudioUI : MonoBehaviour
     {
         setTextProTest();
         setSliderPosition();
+    }
+
+    public void setSliderLength()
+    {
+        audioSlider.minValue = 0;
+        audioSlider.maxValue = AudioWave.clip.length;
     }
     void setTextProTest()
     {
