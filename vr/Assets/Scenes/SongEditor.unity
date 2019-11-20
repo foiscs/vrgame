@@ -5363,6 +5363,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tempo: 120
   _subdivisions: 1
+  beat: 4
   bpm: 0
   isPlay: 0
   isPlayOnce: 0
