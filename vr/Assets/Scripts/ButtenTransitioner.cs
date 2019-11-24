@@ -20,6 +20,7 @@ public class ButtenTransitioner : MonoBehaviour, IPointerEnterHandler, IPointerE
     {
         Debug.Log("enter");
         image.color = HoverColor;
+        GetComponent<TTS>().ReadText();
     }
     public void OnPointerExit(PointerEventData eventData)
     {

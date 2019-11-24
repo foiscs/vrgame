@@ -8,42 +8,30 @@ public class VRCubeMoveTest : MonoBehaviour
     public SteamVR_Input_Sources handType;
     public SteamVR_Action_Boolean touchPad;
     public SteamVR_Action_Boolean holding;
-
-    public SteamVR_TrackedObject trackedObject;
+    public SteamVR_Action_Boolean openDrumSet;
+    public GameObject drumSetObj;
+    
     public GameObject obj;
 
     private FixedJoint fixedJoint;
-    private LineRenderer lineRenderer;
     void Start()
     {
-        lineRenderer = GetComponent<LineRenderer>();
-        trackedObject = GetComponent<SteamVR_TrackedObject>();
         fixedJoint = GetComponent<FixedJoint>();
     }
     void Update()
     {
-        if (holding.GetState(handType))
+        if (handType == SteamVR_Input_Sources.RightHand)
         {
-            lineRenderer.enabled = true;
-            RaycastHit hit;
-            lineRenderer.SetPosition(0, transform.position);
-
-            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity))
-            {
-                lineRenderer.SetPosition(1, hit.point);
-                obj = hit.collider.gameObject;
-            }
+            HoldObj();
+            PickUpObj();
+        }
+        if(openDrumSet.GetState(handType))
+        {
+            if(!drumSetObj.activeSelf)
+                drumSetObj.SetActive(true);
             else
-                lineRenderer.SetPosition(1, transform.TransformDirection(Vector3.forward) * Mathf.Infinity);
+                drumSetObj.SetActive(false);
         }
-        else
-        {
-            lineRenderer.enabled = false;
-            if(obj != null)
-                obj.GetComponent<Rigidbody>().isKinematic = true;
-            obj = null;
-        }
-        PickUpObj();
     }
     void PickUpObj()
     {
@@ -55,6 +43,24 @@ public class VRCubeMoveTest : MonoBehaviour
         else
         {
             fixedJoint.connectedBody = null;
+        }
+    }
+    void HoldObj()
+    {
+        if (holding.GetState(handType))
+        {
+            RaycastHit hit;
+
+            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity))
+            {
+                obj = hit.collider.gameObject;
+            }
+        }
+        else
+        {
+            if (obj != null)
+                obj.GetComponent<Rigidbody>().isKinematic = true;
+            obj = null;
         }
     }
 }

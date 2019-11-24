@@ -5,27 +5,16 @@ using Valve.VR;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject DrumSet;
-    public Vector3 offset;
-
-
-    public SteamVR_Input_Sources handType;
-    public SteamVR_Action_Boolean Click;
-
-
-
-    void Start()
+    public static GameManager Instance = null;
+    public string musicName = null;
+    public int Level = 1;
+    void Awake()
     {
-        DrumSet.transform.position = Camera.allCameras[0].transform.position + offset;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if(Click.GetState(handType))
-        {
-            DrumSet.transform.position = Camera.allCameras[0].transform.position + offset;
-        }
+        if (Instance == null)
+            Instance = this;
+        else if (Instance != this)
+            Destroy(gameObject);
+        DontDestroyOnLoad(gameObject);
     }
 }
 
