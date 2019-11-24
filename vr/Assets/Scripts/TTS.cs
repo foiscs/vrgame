@@ -5,18 +5,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Networking;
+
 public class TTS : MonoBehaviour
 {
     public string text;
     public AudioSource audioSource;
 
+    public enum Mod { en,ko };
+    public Mod mod;
+    
     public void ReadText()
     {
         StartCoroutine(LoadAudio());
     }
     IEnumerator LoadAudio()
     {
-        string url = "https://translate.google.com/translate_tts?ie=UTF-8&total=1&idx=0&textlen=32&client=tw-ob&q="+text+"&tl=En-gb";
+        string url = "https://translate.google.com/translate_tts?ie=UTF-8&total=1&idx=0&textlen=32&client=tw-ob&q="+text+"&tl="+mod.ToString()+"-gb";
         UnityWebRequest www = UnityWebRequestMultimedia.GetAudioClip(url,AudioType.MPEG);
         yield return www.SendWebRequest();
 

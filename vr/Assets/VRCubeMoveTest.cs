@@ -31,6 +31,7 @@ public class VRCubeMoveTest : MonoBehaviour
                 drumSetObj.SetActive(true);
             else
                 drumSetObj.SetActive(false);
+            GetComponent<TTS>().text = "드럼설정창" + drumSetObj.activeSelf;
         }
     }
     void PickUpObj()
