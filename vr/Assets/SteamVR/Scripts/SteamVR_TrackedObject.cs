@@ -108,6 +108,5 @@ namespace Valve.VR
             if (System.Enum.IsDefined(typeof(EIndex), index))
                 this.index = (EIndex)index;
         }
-
     }
 }

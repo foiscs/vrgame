@@ -1,13 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using TMPro;
+using UnityEngine.SceneManagement;
 public class ButtenTransitioner : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerUpHandler,IPointerDownHandler, IPointerClickHandler
 {
     public Color32 NormalColor = Color.white;
     public Color32 HoverColor = Color.grey;
     public Color32 DownColor = Color.white;
+
+    public UnityEvent methods;
 
     private Image image = null;
 
@@ -40,5 +45,23 @@ public class ButtenTransitioner : MonoBehaviour, IPointerEnterHandler, IPointerE
     {
         Debug.Log("click");
         image.color = HoverColor;
+        methods.Invoke();
+    }
+
+    public void ScrollUpButton()
+    {
+
+    }
+    public void ScrollDownButton()
+    {
+
+    }
+    public void SelectLevel(int value)
+    {
+        GameManager.Instance.Level = value;
+    }
+    public void SelectMusic()
+    {
+        GameManager.Instance.musicName= transform.GetChild(0).GetChild(1).GetComponent<TextMeshProUGUI>().text;
     }
 }
