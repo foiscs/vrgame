@@ -11,11 +11,6 @@ public class PlaySound : MonoBehaviour
 	void Start () {
         source = GetComponent<AudioSource>();
 	}
-
-    private void Update()
-    {
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "DrumStickHead")
@@ -23,6 +18,9 @@ public class PlaySound : MonoBehaviour
             source.volume = other.gameObject.GetComponent<TrackSpeed>().speed;
             Debug.Log(other.gameObject.GetComponent<TrackSpeed>().speed);
             ActivateSound();
+
+            if (!Camera.main.GetComponent<AudioSource>().isPlaying)
+                Camera.main.GetComponent<AudioSource>().Play();
         }
     }
 

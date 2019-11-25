@@ -23,8 +23,4 @@ public class PlayGame : MonoBehaviour
         if(!audioSource.isPlaying)
             audioSource.Play();
     }
-    public void SetDrum()
-    {
-
-    }
 }

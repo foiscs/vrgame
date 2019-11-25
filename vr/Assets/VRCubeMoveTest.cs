@@ -24,6 +24,10 @@ public class VRCubeMoveTest : MonoBehaviour
         {
             HoldObj();
             PickUpObj();
+            if(transform.childCount == 4 && holding.GetState(handType))
+            {
+                transform.GetChild(3).parent = GameManager.Instance.transform;
+            }
         }
         if(openDrumSet.GetState(handType))
         {

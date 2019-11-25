@@ -11,10 +11,11 @@ public class DrumSetting : MonoBehaviour, IPointerClickHandler, IPointerEnterHan
 
     public GameObject drumPart;
     private Image image = null;
-
+    private GameObject parent;
     private void Awake()
     {
         image = GetComponent<Image>();
+        parent = GameObject.Find("Controller (right)");
     }
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -24,6 +25,9 @@ public class DrumSetting : MonoBehaviour, IPointerClickHandler, IPointerEnterHan
     public void OnPointerClick(PointerEventData eventData)
     {
         image.color = HoverColor;
-        GameObject temp = Instantiate(drumPart,GameManager.Instance.transform);
+        
+        GameObject temp = Instantiate(drumPart,parent.transform);
+        temp.transform.localPosition = Vector3.zero;
+        temp.transform.localScale = Vector3.one;
     }
 }

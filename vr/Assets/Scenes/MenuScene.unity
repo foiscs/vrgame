@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1455035702}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -400,7 +400,7 @@ GameObject:
   - component: {fileID: 117779561}
   - component: {fileID: 117779563}
   - component: {fileID: 117779562}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: High Hat Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -555,7 +555,7 @@ GameObject:
   - component: {fileID: 140827941}
   - component: {fileID: 140827943}
   - component: {fileID: 140827942}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cylinder.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -765,6 +765,169 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   _colorThreshold2: 0.5
   _colorMultiplier2: 1.6
+--- !u!43 &153016440
+Mesh:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  serializedVersion: 10
+  m_SubMeshes:
+  - serializedVersion: 2
+    firstByte: 0
+    indexCount: 24
+    topology: 0
+    baseVertex: 0
+    firstVertex: 0
+    vertexCount: 8
+    localAABB:
+      m_Center: {x: 0, y: 0.01, z: 0}
+      m_Extent: {x: 2.15, y: 0, z: 1.65}
+  m_Shapes:
+    vertices: []
+    shapes: []
+    channels: []
+    fullWeights: []
+  m_BindPose: []
+  m_BoneNameHashes: 
+  m_RootBoneNameHash: 0
+  m_BonesAABB: []
+  m_VariableBoneCountWeights:
+    m_Data: 
+  m_MeshCompression: 0
+  m_IsReadable: 1
+  m_KeepVertices: 1
+  m_KeepIndices: 1
+  m_IndexFormat: 0
+  m_IndexBuffer: 000004000100010004000500010005000200020005000600020006000300030006000700030007000000000007000400
+  m_VertexData:
+    serializedVersion: 3
+    m_VertexCount: 8
+    m_Channels:
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 3
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 12
+      format: 0
+      dimension: 4
+    - stream: 0
+      offset: 28
+      format: 0
+      dimension: 2
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    m_DataSize: 288
+    _typelessdata: 000000400ad7233c0000c0bf000000000000803f0000803f0000803f0000000000000000000000c00ad7233c0000c0bf000000000000803f0000803f0000803f0000803f00000000000000c00ad7233c0000c03f000000000000803f0000803f0000803f0000000000000000000000400ad7233c0000c03f000000000000803f0000803f0000803f0000803f000000009a9909400ad7233c3333d3bf000000000000803f0000803f00000000000000000000803f9a9909c00ad7233c3333d3bf000000000000803f0000803f000000000000803f0000803f9a9909c00ad7233c3333d33f000000000000803f0000803f00000000000000000000803f9a9909400ad7233c3333d33f000000000000803f0000803f000000000000803f0000803f
+  m_CompressedMesh:
+    m_Vertices:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UV:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Normals:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Tangents:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Weights:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_NormalSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_TangentSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_FloatColors:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_BoneIndices:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Triangles:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UVInfo: 0
+  m_LocalAABB:
+    m_Center: {x: 0, y: 0.01, z: 0}
+    m_Extent: {x: 2.15, y: 0, z: 1.65}
+  m_MeshUsageFlags: 0
+  m_BakedConvexCollisionMesh: 
+  m_BakedTriangleCollisionMesh: 
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
+  m_MeshOptimizationFlags: 1
+  m_StreamData:
+    offset: 0
+    size: 0
+    path: 
 --- !u!1 &155263761
 GameObject:
   m_ObjectHideFlags: 0
@@ -864,7 +1027,7 @@ GameObject:
   - component: {fileID: 242462822}
   - component: {fileID: 242462821}
   - component: {fileID: 242462820}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: drum colider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1137,7 +1300,9 @@ GameObject:
   - component: {fileID: 320336715}
   - component: {fileID: 320336718}
   - component: {fileID: 320336717}
-  m_Layer: 0
+  - component: {fileID: 320336716}
+  - component: {fileID: 320336719}
+  m_Layer: 8
   m_Name: Rack Tom right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1159,6 +1324,22 @@ Transform:
   m_Father: {fileID: 1701049484}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: -40, y: 0, z: 0}
+--- !u!54 &320336716
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 320336714}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!23 &320336717
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1208,40 +1389,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 320336714}
   m_Mesh: {fileID: 4300000, guid: 15db42f874d09474081758b6f6435fa8, type: 3}
---- !u!21 &329413974
-Material:
-  serializedVersion: 6
+--- !u!65 &320336719
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Sprites/Default
-  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _AlphaTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - PixelSnap: 0
-    - _EnableExternalAlpha: 0
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
+  m_GameObject: {fileID: 320336714}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.55, y: 0.58159554, z: 0.0630942}
+  m_Center: {x: 0, y: -0.000000014901161, z: 0}
 --- !u!1 &340745165
 GameObject:
   m_ObjectHideFlags: 0
@@ -1251,7 +1411,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 340745166}
-  m_Layer: 0
+  - component: {fileID: 340745167}
+  - component: {fileID: 340745168}
+  m_Layer: 8
   m_Name: Floor Tom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1279,6 +1441,35 @@ Transform:
   m_Father: {fileID: 1701049484}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: 0, z: 0}
+--- !u!54 &340745167
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 340745165}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &340745168
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 340745165}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.4, y: 0.4, z: 0.4}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &343313662
 GameObject:
   m_ObjectHideFlags: 0
@@ -1595,7 +1786,7 @@ GameObject:
   - component: {fileID: 382399979}
   - component: {fileID: 382399981}
   - component: {fileID: 382399980}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Floor Stand.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1828,7 +2019,9 @@ GameObject:
   - component: {fileID: 413719139}
   - component: {fileID: 413719142}
   - component: {fileID: 413719141}
-  m_Layer: 0
+  - component: {fileID: 413719140}
+  - component: {fileID: 413719143}
+  m_Layer: 8
   m_Name: Bass Drum
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1849,6 +2042,22 @@ Transform:
   m_Father: {fileID: 1701049484}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: 0, z: 0}
+--- !u!54 &413719140
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 413719138}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!23 &413719141
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1898,6 +2107,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 413719138}
   m_Mesh: {fileID: 4300000, guid: 76b8241fc0a148e41914e9a6ca0b1d40, type: 3}
+--- !u!65 &413719143
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 413719138}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5526818, y: 0.4101057, z: 0.552682}
+  m_Center: {x: 0.000000014901161, y: 0, z: 0}
 --- !u!1 &415272745
 GameObject:
   m_ObjectHideFlags: 0
@@ -2233,7 +2455,7 @@ GameObject:
   - component: {fileID: 443983093}
   - component: {fileID: 443983095}
   - component: {fileID: 443983094}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2333,7 +2555,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: 2200.0059}
+  m_AnchoredPosition: {x: 0, y: 2200}
   m_SizeDelta: {x: 800, y: 3000}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &446419569
@@ -2371,7 +2593,7 @@ GameObject:
   - component: {fileID: 451858398}
   - component: {fileID: 451858400}
   - component: {fileID: 451858399}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cylinder.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2449,7 +2671,7 @@ GameObject:
   - component: {fileID: 466930433}
   - component: {fileID: 466930435}
   - component: {fileID: 466930434}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cylinder.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2527,7 +2749,7 @@ GameObject:
   - component: {fileID: 489378470}
   - component: {fileID: 489378472}
   - component: {fileID: 489378471}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Floor Tom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2608,7 +2830,7 @@ GameObject:
   - component: {fileID: 496201192}
   - component: {fileID: 496201194}
   - component: {fileID: 496201193}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2790,7 +3012,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 536194109}
-  m_Layer: 0
+  - component: {fileID: 536194110}
+  - component: {fileID: 536194111}
+  m_Layer: 8
   m_Name: Side Cymbal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2817,6 +3041,35 @@ Transform:
   m_Father: {fileID: 1701049484}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 50, y: 0, z: 0}
+--- !u!54 &536194110
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 536194108}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &536194111
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 536194108}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.4, y: 0.1, z: 0.4}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &537807717
 GameObject:
   m_ObjectHideFlags: 0
@@ -2852,10 +3105,10 @@ RectTransform:
   m_Father: {fileID: 1616370081}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 985, y: -1645}
-  m_SizeDelta: {x: 650, y: 650}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &537807719
 MonoBehaviour:
@@ -3069,7 +3322,7 @@ GameObject:
   - component: {fileID: 568377483}
   - component: {fileID: 568377485}
   - component: {fileID: 568377484}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube.008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3150,7 +3403,7 @@ GameObject:
   - component: {fileID: 577837917}
   - component: {fileID: 577837916}
   - component: {fileID: 577837915}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: drum colider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3820,8 +4073,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1035474177}
   m_HandleRect: {fileID: 1035474176}
   m_Direction: 2
-  m_Value: -0.0000026078658
-  m_Size: 0.26659188
+  m_Value: 0
+  m_Size: 0.26666665
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -4098,7 +4351,7 @@ GameObject:
   - component: {fileID: 709042747}
   - component: {fileID: 709042749}
   - component: {fileID: 709042748}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cymbal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4250,7 +4503,9 @@ GameObject:
   - component: {fileID: 732004388}
   - component: {fileID: 732004391}
   - component: {fileID: 732004390}
-  m_Layer: 0
+  - component: {fileID: 732004389}
+  - component: {fileID: 732004392}
+  m_Layer: 8
   m_Name: Rack Tom left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4272,6 +4527,22 @@ Transform:
   m_Father: {fileID: 1701049484}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: -40, y: 0, z: 0}
+--- !u!54 &732004389
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 732004387}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!23 &732004390
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4321,6 +4592,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 732004387}
   m_Mesh: {fileID: 4300000, guid: cbe6b8f6d0e65a2409f4fe4c60637c46, type: 3}
+--- !u!65 &732004392
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 732004387}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.54999995, y: 0.58981085, z: 0.065615915}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &803290373
 GameObject:
   m_ObjectHideFlags: 0
@@ -4335,7 +4619,7 @@ GameObject:
   - component: {fileID: 803290377}
   - component: {fileID: 803290376}
   - component: {fileID: 803290375}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: drum colider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4666,7 +4950,7 @@ GameObject:
   - component: {fileID: 844119600}
   - component: {fileID: 844119602}
   - component: {fileID: 844119601}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5030,10 +5314,10 @@ RectTransform:
   m_Father: {fileID: 1616370081}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1645, y: -325}
-  m_SizeDelta: {x: 650, y: 650}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &955739749
 MonoBehaviour:
@@ -5286,7 +5570,7 @@ GameObject:
   - component: {fileID: 1104426612}
   - component: {fileID: 1104426614}
   - component: {fileID: 1104426613}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Floor Stand.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5389,10 +5673,10 @@ RectTransform:
   m_Father: {fileID: 1616370081}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 325, y: -325}
-  m_SizeDelta: {x: 650, y: 650}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1111941162
 MonoBehaviour:
@@ -5614,169 +5898,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1139387898}
   m_CullTransparentMesh: 0
---- !u!43 &1141974577
-Mesh:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  serializedVersion: 10
-  m_SubMeshes:
-  - serializedVersion: 2
-    firstByte: 0
-    indexCount: 24
-    topology: 0
-    baseVertex: 0
-    firstVertex: 0
-    vertexCount: 8
-    localAABB:
-      m_Center: {x: 0, y: 0.01, z: 0}
-      m_Extent: {x: 2.15, y: 0, z: 1.65}
-  m_Shapes:
-    vertices: []
-    shapes: []
-    channels: []
-    fullWeights: []
-  m_BindPose: []
-  m_BoneNameHashes: 
-  m_RootBoneNameHash: 0
-  m_BonesAABB: []
-  m_VariableBoneCountWeights:
-    m_Data: 
-  m_MeshCompression: 0
-  m_IsReadable: 1
-  m_KeepVertices: 1
-  m_KeepIndices: 1
-  m_IndexFormat: 0
-  m_IndexBuffer: 000004000100010004000500010005000200020005000600020006000300030006000700030007000000000007000400
-  m_VertexData:
-    serializedVersion: 3
-    m_VertexCount: 8
-    m_Channels:
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 3
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 12
-      format: 0
-      dimension: 4
-    - stream: 0
-      offset: 28
-      format: 0
-      dimension: 2
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    m_DataSize: 288
-    _typelessdata: 000000400ad7233c0000c0bf000000000000803f0000803f0000803f0000000000000000000000c00ad7233c0000c0bf000000000000803f0000803f0000803f0000803f00000000000000c00ad7233c0000c03f000000000000803f0000803f0000803f0000000000000000000000400ad7233c0000c03f000000000000803f0000803f0000803f0000803f000000009a9909400ad7233c3333d3bf000000000000803f0000803f00000000000000000000803f9a9909c00ad7233c3333d3bf000000000000803f0000803f000000000000803f0000803f9a9909c00ad7233c3333d33f000000000000803f0000803f00000000000000000000803f9a9909400ad7233c3333d33f000000000000803f0000803f000000000000803f0000803f
-  m_CompressedMesh:
-    m_Vertices:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_UV:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Normals:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Tangents:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Weights:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_NormalSigns:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_TangentSigns:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_FloatColors:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_BoneIndices:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Triangles:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_UVInfo: 0
-  m_LocalAABB:
-    m_Center: {x: 0, y: 0.01, z: 0}
-    m_Extent: {x: 2.15, y: 0, z: 1.65}
-  m_MeshUsageFlags: 0
-  m_BakedConvexCollisionMesh: 
-  m_BakedTriangleCollisionMesh: 
-  m_MeshMetrics[0]: 1
-  m_MeshMetrics[1]: 1
-  m_MeshOptimizationFlags: 1
-  m_StreamData:
-    offset: 0
-    size: 0
-    path: 
 --- !u!1 &1150186227
 GameObject:
   m_ObjectHideFlags: 0
@@ -5788,7 +5909,7 @@ GameObject:
   - component: {fileID: 1150186228}
   - component: {fileID: 1150186230}
   - component: {fileID: 1150186229}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5950,7 +6071,7 @@ GameObject:
   - component: {fileID: 1198308861}
   - component: {fileID: 1198308863}
   - component: {fileID: 1198308862}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Floor Stand.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6045,7 +6166,7 @@ Transform:
   m_GameObject: {fileID: 1205111176}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.025, y: 0.025, z: 0.25}
+  m_LocalScale: {x: 0.025, y: 0.025, z: 0.025}
   m_Children: []
   m_Father: {fileID: 1937305816}
   m_RootOrder: 0
@@ -6184,7 +6305,7 @@ GameObject:
   - component: {fileID: 1237339461}
   - component: {fileID: 1237339460}
   - component: {fileID: 1237339459}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: drum colider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6373,6 +6494,40 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1237339457}
   m_Mesh: {fileID: 4300000, guid: 35ab76c9b6ccf174788dac049ce39e7a, type: 3}
+--- !u!21 &1247940326
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Sprites/Default
+  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - PixelSnap: 0
+    - _EnableExternalAlpha: 0
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1306620794
 GameObject:
   m_ObjectHideFlags: 0
@@ -6765,7 +6920,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1413519503}
-  m_Layer: 0
+  - component: {fileID: 1413519504}
+  - component: {fileID: 1413519505}
+  m_Layer: 8
   m_Name: Top Cymbal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6789,6 +6946,35 @@ Transform:
   m_Father: {fileID: 1701049484}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 50, y: 0, z: 0}
+--- !u!54 &1413519504
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1413519502}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &1413519505
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1413519502}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.4, y: 0.1, z: 0.4}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1419283496
 GameObject:
   m_ObjectHideFlags: 0
@@ -7202,7 +7388,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1461436484}
-  m_Layer: 0
+  - component: {fileID: 1461436485}
+  - component: {fileID: 1461436486}
+  m_Layer: 8
   m_Name: High Hat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7230,6 +7418,35 @@ Transform:
   m_Father: {fileID: 1701049484}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 50, y: 0, z: 0}
+--- !u!54 &1461436485
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1461436483}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &1461436486
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1461436483}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.4, y: 0.08, z: 0.4}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1468346934
 GameObject:
   m_ObjectHideFlags: 0
@@ -7466,7 +7683,7 @@ GameObject:
   - component: {fileID: 1502625190}
   - component: {fileID: 1502625192}
   - component: {fileID: 1502625191}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: High Hat bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7544,7 +7761,7 @@ GameObject:
   - component: {fileID: 1503025225}
   - component: {fileID: 1503025227}
   - component: {fileID: 1503025226}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cylinder.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7781,7 +7998,7 @@ GameObject:
   - component: {fileID: 1513267248}
   - component: {fileID: 1513267250}
   - component: {fileID: 1513267249}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Snare Drum
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7963,10 +8180,10 @@ RectTransform:
   m_Father: {fileID: 1616370081}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 985, y: -325}
-  m_SizeDelta: {x: 650, y: 650}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1534784556
 MonoBehaviour:
@@ -8278,7 +8495,7 @@ GameObject:
   - component: {fileID: 1647527467}
   - component: {fileID: 1647527469}
   - component: {fileID: 1647527468}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8359,7 +8576,7 @@ GameObject:
   - component: {fileID: 1663521833}
   - component: {fileID: 1663521832}
   - component: {fileID: 1663521831}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: drum colider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8559,7 +8776,7 @@ GameObject:
   - component: {fileID: 1696957035}
   - component: {fileID: 1696957037}
   - component: {fileID: 1696957036}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cymbal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8641,7 +8858,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1701049484
 Transform:
   m_ObjectHideFlags: 0
@@ -8676,7 +8893,7 @@ GameObject:
   - component: {fileID: 1727734405}
   - component: {fileID: 1727734407}
   - component: {fileID: 1727734406}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cylinder.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8778,10 +8995,10 @@ RectTransform:
   m_Father: {fileID: 1616370081}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 325, y: -985}
-  m_SizeDelta: {x: 650, y: 650}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1735760863
 MonoBehaviour:
@@ -8918,24 +9135,56 @@ PrefabInstance:
     - target: {fileID: 2348914, guid: 4d293c8e162f3874b982baadd71153d2, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 329413974}
+      objectReference: {fileID: 1247940326}
     - target: {fileID: 3380982, guid: 4d293c8e162f3874b982baadd71153d2, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 1141974577}
-    - target: {fileID: 192944, guid: 4d293c8e162f3874b982baadd71153d2, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 147176, guid: 4d293c8e162f3874b982baadd71153d2, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 153016440}
     - target: {fileID: 1000014254142504, guid: 4d293c8e162f3874b982baadd71153d2, type: 3}
       propertyPath: m_TagString
       value: MainCamera
       objectReference: {fileID: 0}
     - target: {fileID: 1000014254142504, guid: 4d293c8e162f3874b982baadd71153d2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11489174, guid: 4d293c8e162f3874b982baadd71153d2, type: 3}
+      propertyPath: size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013889601590, guid: 4d293c8e162f3874b982baadd71153d2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.0030610205
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013889601590, guid: 4d293c8e162f3874b982baadd71153d2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.9920997
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013889601590, guid: 4d293c8e162f3874b982baadd71153d2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.122958474
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013889601590, guid: 4d293c8e162f3874b982baadd71153d2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.024702217
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013889601590, guid: 4d293c8e162f3874b982baadd71153d2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.0055811703
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013889601590, guid: 4d293c8e162f3874b982baadd71153d2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.8699573
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013889601590, guid: 4d293c8e162f3874b982baadd71153d2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.0010719299
+      objectReference: {fileID: 0}
+    - target: {fileID: 192944, guid: 4d293c8e162f3874b982baadd71153d2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 147176, guid: 4d293c8e162f3874b982baadd71153d2, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -8958,10 +9207,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BackGroundColor.b
       value: 0.7330103
-      objectReference: {fileID: 0}
-    - target: {fileID: 11489174, guid: 4d293c8e162f3874b982baadd71153d2, type: 3}
-      propertyPath: size
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d293c8e162f3874b982baadd71153d2, type: 3}
@@ -9013,7 +9258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66d79a5ae30eb2e4d99d399bc71c4d43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  handType: 0
+  handType: 2
   touchPad:
     actionPath: 
     needsReinit: 0
@@ -9265,7 +9510,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1823946171}
-  m_Layer: 0
+  - component: {fileID: 1823946172}
+  - component: {fileID: 1823946173}
+  m_Layer: 8
   m_Name: Snare Drum
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9293,6 +9540,35 @@ Transform:
   m_Father: {fileID: 1701049484}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 50, y: 0, z: 0}
+--- !u!54 &1823946172
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1823946170}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &1823946173
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1823946170}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.37, y: 0.15, z: 0.37}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1828519051
 GameObject:
   m_ObjectHideFlags: 0
@@ -9389,7 +9665,7 @@ GameObject:
   - component: {fileID: 1836298866}
   - component: {fileID: 1836298868}
   - component: {fileID: 1836298867}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Floor Stand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9471,7 +9747,7 @@ GameObject:
   - component: {fileID: 1868293205}
   - component: {fileID: 1868293204}
   - component: {fileID: 1868293203}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: drum colider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9695,10 +9971,10 @@ RectTransform:
   m_Father: {fileID: 1616370081}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1645, y: -985}
-  m_SizeDelta: {x: 650, y: 650}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1923107234
 MonoBehaviour:
@@ -9808,10 +10084,10 @@ RectTransform:
   m_Father: {fileID: 1616370081}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 325, y: -1645}
-  m_SizeDelta: {x: 650, y: 650}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1929520051
 MonoBehaviour:
@@ -9897,7 +10173,7 @@ GameObject:
   - component: {fileID: 1936441307}
   - component: {fileID: 1936441309}
   - component: {fileID: 1936441308}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10196,10 +10472,10 @@ RectTransform:
   m_Father: {fileID: 1616370081}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 985, y: -985}
-  m_SizeDelta: {x: 650, y: 650}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1941579803
 MonoBehaviour:
@@ -10362,7 +10638,7 @@ GameObject:
   - component: {fileID: 1973901730}
   - component: {fileID: 1973901729}
   - component: {fileID: 1973901728}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: drum colider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10922,7 +11198,7 @@ GameObject:
   - component: {fileID: 2061534767}
   - component: {fileID: 2061534769}
   - component: {fileID: 2061534768}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11085,7 +11361,7 @@ GameObject:
   - component: {fileID: 2076781928}
   - component: {fileID: 2076781930}
   - component: {fileID: 2076781929}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11390,7 +11666,7 @@ GameObject:
   - component: {fileID: 2144211042}
   - component: {fileID: 2144211044}
   - component: {fileID: 2144211043}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cylinder.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
