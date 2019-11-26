@@ -162,13 +162,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NormalColor:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 2919202304
   HoverColor:
     serializedVersion: 2
-    rgba: 4286545791
+    rgba: 2919175936
   DownColor:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 2919202304
   methods:
     m_PersistentCalls:
       m_Calls:
@@ -183,6 +183,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  thumbnail: {fileID: 1040547427539682248}
 --- !u!1 &1040547427890064571
 GameObject:
   m_ObjectHideFlags: 0

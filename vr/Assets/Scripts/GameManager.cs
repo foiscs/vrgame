@@ -10,8 +10,11 @@ public class GameManager : MonoBehaviour
 
     public TextMeshProUGUI textMeshPro;
     public static GameManager Instance = null;
-    public string musicName = null;
+
     public int Level = 1;
+    public string musicName = null;
+
+    private AudioSource audioSource;
     void Awake()
     {
         if (Instance == null)
@@ -38,6 +41,24 @@ public class GameManager : MonoBehaviour
             textMeshPro.text = "EXPERT";
         if (Level == 5)
             textMeshPro.text = "EXPERT+";
+    }
+    void PlayNodes()
+    {
+        for (int i = 0; i < nodes.Count; i++)
+        {
+            if(audioSource.time > nodes[i].time && !nodesPlayOne[i])
+            {
+                nodesPlayOne[i] = true;
+
+                //노드 생성
+            }
+        }
+    }
+
+    public void LoadMusicInPlayScene()
+    {
+        audioSource = GameObject.Find("AudioPeer").GetComponent<AudioSource>();
+        audioSource.clip = Resources.Load<AudioClip>("Music/" + musicName + "/" + musicName);
     }
 }
 

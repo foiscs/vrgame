@@ -31,7 +31,6 @@ public class NoiseFlowfield : MonoBehaviour {
         }
         if (valid)
         {
-            Debug.Log("das");
             return true;
         }
             return false;  
@@ -76,7 +75,6 @@ public class NoiseFlowfield : MonoBehaviour {
                 }
             }
         }
-        Debug.Log(_particles.Count);
     }
 
     // Update is called once per frame

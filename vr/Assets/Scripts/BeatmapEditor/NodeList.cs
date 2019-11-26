@@ -8,6 +8,7 @@ public class NodeList : MonoBehaviour
 
     public List<Node> nodes = new List<Node>();
     public List<bool> nodesPlayOne = new List<bool>();
+    public int count;
     void Awake()
     {
         if (Instance == null)
@@ -15,5 +16,9 @@ public class NodeList : MonoBehaviour
         else if (Instance != this)
             Destroy(gameObject);
         DontDestroyOnLoad(gameObject);
+    }
+    private void Update()
+    {
+        count = nodes.Count;
     }
 }

@@ -2,9 +2,8 @@
 using System.Collections;
 using UnityEngine.Audio;
 
-[RequireComponent (typeof (AudioSource))]
 public class AudioPeer : MonoBehaviour {
-	AudioSource _audioSource;
+	public AudioSource _audioSource;
 
     //Microphone input
     public AudioClip _audioClip;
@@ -81,10 +80,7 @@ public class AudioPeer : MonoBehaviour {
             _audioSource.outputAudioMixerGroup = _mixerGroupMaster;
             _audioSource.clip = _audioClip;
         }
-
-        string musicName = GameManager.Instance.musicName;
-        _audioSource.clip = Resources.Load<AudioClip>("Music/" + musicName + "/" + musicName);
-        _audioSource.Play();
+        
      //   _audioSource.time += 110;
     }
 

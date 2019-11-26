@@ -18,9 +18,13 @@ public class PlaySound : MonoBehaviour
             source.volume = other.gameObject.GetComponent<TrackSpeed>().speed;
             ActivateSound();
 
-            if (!Camera.main.GetComponent<AudioSource>().isPlaying)
-                Camera.main.GetComponent<AudioSource>().Play();
+            if (!GameObject.Find("AudioPeer").GetComponent<AudioSource>().isPlaying)
+            {
+                GameManager.Instance.LoadMusicInPlayScene();
+                GameObject.Find("AudioPeer").GetComponent<AudioPeer>()._audioSource.Play();
+            }
         }
+        
     }
 
     private void ActivateSound()

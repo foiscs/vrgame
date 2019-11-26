@@ -78,8 +78,8 @@ public class EditorManager : MonoBehaviour
         Line.SetActive(false);
         gr = MusicSelectCanvas.GetComponent<GraphicRaycaster>();
         ped = new PointerEventData(null);
-        MusicSelectCanvas.enabled = true;
-        NodeAddCanvas.enabled = false;
+        MusicSelectCanvas.gameObject.SetActive(true);
+        NodeAddCanvas.gameObject.SetActive(false);
     }
     void Update()
     {
@@ -93,8 +93,8 @@ public class EditorManager : MonoBehaviour
             {
                 string musicName = obj.transform.GetChild(0).GetChild(1).GetComponent<TextMeshProUGUI>().text;
                 audioSource.clip = Resources.Load<AudioClip>("Music/" + musicName + "/" + musicName);
-                MusicSelectCanvas.enabled = false;
-                NodeAddCanvas.enabled = true;
+                MusicSelectCanvas.gameObject.SetActive(false);
+                NodeAddCanvas.gameObject.SetActive(true);
                 Line.SetActive(true);
                 bpm = UniBpmAnalyzer.AnalyzeBpm(audioSource.clip);
                 GameObject.Find("Metronome").GetComponent<Metronome_Lesson3>().bpm = bpm;
@@ -104,8 +104,19 @@ public class EditorManager : MonoBehaviour
             }
         }
 
-        inputKey();
-        nodeMove();
+        if (NodeAddCanvas.gameObject.activeSelf)
+        {
+            if (Input.GetKey(KeyCode.End))
+            {
+                MusicSelectCanvas.gameObject.SetActive(true);
+                NodeAddCanvas.gameObject.SetActive(false);
+
+                NodeList.Instance.nodes.Clear();
+                NodeList.Instance.nodesPlayOne.Clear();
+            }
+            inputKey();
+            nodeMove();
+        }
     }
     void inputKey()
     {
@@ -185,7 +196,9 @@ public class EditorManager : MonoBehaviour
         foreach (var item in dir.GetDirectories())
         {
             if (item.Name == audioName)
+            {
                 path = item.FullName + "/" + audioName + ".beatmap";
+            }
         }
         BinaryWriter bw = new BinaryWriter(File.Open(path, FileMode.Create));
         bw.Write(startTime);
@@ -255,21 +268,21 @@ public class EditorManager : MonoBehaviour
 
     public void playNodeSound(int type)
     {
-        if(type == 0)
-        {
-            hihat.PlayOneShot(hihat.clip);
-        }
-        if (type == 1)
-        {
-            snare.PlayOneShot(snare.clip);
-        }
-        if (type == 2)
+        if (type == 0)
         {
             bass.PlayOneShot(bass.clip);
         }
+        if (type == 1)
+        {
+            floorTom.PlayOneShot(floorTom.clip);
+        }
+        if (type == 2)
+        {
+            snare.PlayOneShot(snare.clip);
+        }
         if (type == 3)
         {
-            hiTom.PlayOneShot(hiTom.clip);
+            hihat.PlayOneShot(hihat.clip);
         }
         if (type == 4)
         {
@@ -277,7 +290,7 @@ public class EditorManager : MonoBehaviour
         }
         if (type == 5)
         {
-            floorTom.PlayOneShot(floorTom.clip);
+            hiTom.PlayOneShot(hiTom.clip);
         }
         if (type == 6)
         {

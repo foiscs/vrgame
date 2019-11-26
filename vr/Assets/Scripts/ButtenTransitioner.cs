@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System.IO;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -14,36 +15,35 @@ public class ButtenTransitioner : MonoBehaviour, IPointerEnterHandler, IPointerE
 
     public UnityEvent methods;
 
+    public Image thumbnail;
     private Image image = null;
-
     private void Awake()
     {
         image = GetComponent<Image>();
     }
-
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.P))
+            PlyButton();
+    }
     public void OnPointerEnter(PointerEventData eventData)
     {
-        Debug.Log("enter");
         image.color = HoverColor;
         GetComponent<TTS>().ReadText();
     }
     public void OnPointerExit(PointerEventData eventData)
     {
-        Debug.Log("exit");
         image.color = NormalColor;
     }
     public void OnPointerUp(PointerEventData eventData)
     {
-        Debug.Log("up");
     }
     public void OnPointerDown(PointerEventData eventData)
     {
-        Debug.Log("enter");
         image.color = DownColor;
     }
     public void OnPointerClick(PointerEventData eventData)
     {
-        Debug.Log("click");
         image.color = HoverColor;
         methods.Invoke();
     }
@@ -66,12 +66,50 @@ public class ButtenTransitioner : MonoBehaviour, IPointerEnterHandler, IPointerE
     }
     public void PlyButton()
     {
-        
         for (int i = 0; i < GameManager.Instance.transform.childCount; i++)
         {
             GameObject child = GameManager.Instance.transform.GetChild(i).gameObject;
+
             child.GetComponent<BoxCollider>().enabled = false;
         }
+        LoadNodes(GameManager.Instance.musicName);
+
         SceneManager.LoadScene(2);
+    }
+    public void LoadNodes(string audioName)
+    {
+        DirectoryInfo dir = new DirectoryInfo(Application.dataPath + "/Resources/Music");
+        string path = "";
+        foreach (var item in dir.GetDirectories())
+        {
+            if (item.Name == audioName)
+                path = item.FullName + "/" + audioName + ".beatmap";
+        }
+        if (File.Exists(path))
+        {
+            BinaryReader br = new BinaryReader(File.Open(path, FileMode.Open));
+            int startTime = br.ReadInt32();
+            while (true)
+            {
+                try
+                {
+                    Node node = new Node();
+                    node.drumNum = br.ReadInt32();
+                    node.time = br.ReadSingle();
+                    node.play = false;
+                    GameManager.Instance.nodes.Add(node);
+                    GameManager.Instance.nodesPlayOne.Add(false);
+                }
+                catch (EndOfStreamException e)
+                {
+                    br.Close();
+                    break;
+                }
+            }
+        }
+    }
+    public void ThumbnailChange()
+    {
+        GameObject.Find("Thumbnail").GetComponent<Image>().sprite = thumbnail.sprite;
     }
 }
