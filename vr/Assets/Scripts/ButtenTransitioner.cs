@@ -64,4 +64,14 @@ public class ButtenTransitioner : MonoBehaviour, IPointerEnterHandler, IPointerE
     {
         GameManager.Instance.musicName= transform.GetChild(0).GetChild(1).GetComponent<TextMeshProUGUI>().text;
     }
+    public void PlyButton()
+    {
+        
+        for (int i = 0; i < GameManager.Instance.transform.childCount; i++)
+        {
+            GameObject child = GameManager.Instance.transform.GetChild(i).gameObject;
+            child.GetComponent<BoxCollider>().enabled = false;
+        }
+        SceneManager.LoadScene(2);
+    }
 }

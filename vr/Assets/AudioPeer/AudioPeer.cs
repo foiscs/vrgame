@@ -82,6 +82,8 @@ public class AudioPeer : MonoBehaviour {
             _audioSource.clip = _audioClip;
         }
 
+        string musicName = GameManager.Instance.musicName;
+        _audioSource.clip = Resources.Load<AudioClip>("Music/" + musicName + "/" + musicName);
         _audioSource.Play();
      //   _audioSource.time += 110;
     }

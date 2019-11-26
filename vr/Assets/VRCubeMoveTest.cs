@@ -22,12 +22,12 @@ public class VRCubeMoveTest : MonoBehaviour
     {
         if (handType == SteamVR_Input_Sources.RightHand)
         {
+            if (transform.childCount == 3 && !holding.GetState(handType))
+            {
+                transform.GetChild(2).parent = GameManager.Instance.transform;
+            }
             HoldObj();
             PickUpObj();
-            if(transform.childCount == 4 && holding.GetState(handType))
-            {
-                transform.GetChild(3).parent = GameManager.Instance.transform;
-            }
         }
         if(openDrumSet.GetState(handType))
         {
@@ -63,8 +63,16 @@ public class VRCubeMoveTest : MonoBehaviour
         }
         else
         {
+
             if (obj != null)
+            {
+                if (obj.name.Contains("drum colider"))
+                {
+                    obj = null;
+                    return;
+                }
                 obj.GetComponent<Rigidbody>().isKinematic = true;
+            }
             obj = null;
         }
     }

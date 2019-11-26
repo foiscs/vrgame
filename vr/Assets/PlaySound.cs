@@ -16,7 +16,6 @@ public class PlaySound : MonoBehaviour
         if(other.tag == "DrumStickHead")
         {
             source.volume = other.gameObject.GetComponent<TrackSpeed>().speed;
-            Debug.Log(other.gameObject.GetComponent<TrackSpeed>().speed);
             ActivateSound();
 
             if (!Camera.main.GetComponent<AudioSource>().isPlaying)

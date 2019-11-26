@@ -25,9 +25,13 @@ public class DrumSetting : MonoBehaviour, IPointerClickHandler, IPointerEnterHan
     public void OnPointerClick(PointerEventData eventData)
     {
         image.color = HoverColor;
-        
+        Debug.Log("down");
+
         GameObject temp = Instantiate(drumPart,parent.transform);
-        temp.transform.localPosition = Vector3.zero;
+        temp.transform.localPosition = Vector3.forward;
         temp.transform.localScale = Vector3.one;
+        temp.GetComponent<BoxCollider>().enabled = true;
+        drumPart.SetActive(false);
+        gameObject.SetActive(false);
     }
 }
