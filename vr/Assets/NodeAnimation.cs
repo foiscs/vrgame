@@ -4,31 +4,22 @@ using UnityEngine;
 
 public class NodeAnimation : MonoBehaviour
 {
-    public float time = 0;
+    [HideInInspector]
+    public int num;
     public float speed;
     
-    public Vector3 StartVector;
-    private Vector3 EndVector;
     private void Start()
     {
-        transform.localRotation = transform.parent.localRotation;
-        StartVector = transform.localScale;
-        EndVector = new Vector3(0, StartVector.y, 0);
-        time = 0;
-    }
-    private void OnEnable()
-    {
-        time = 0;
+        transform.localRotation = transform.parent.rotation;
     }
     void Update()
     {
-        transform.localScale = Vector3.Lerp(StartVector, EndVector, time);
-        time += Time.deltaTime;
+        transform.localScale -= new Vector3(1, 0, 1) * Time.deltaTime * speed;
+        
 
-        if (time >= 1)
+        if (transform.localScale.x <= 0)
         {
             gameObject.SetActive(false);
-            transform.localScale = StartVector;
         }
     }
 }

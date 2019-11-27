@@ -8,7 +8,9 @@ public class GameManager : MonoBehaviour
     public List<Node> nodes = new List<Node>();
     public List<bool> nodesPlayOne = new List<bool>();
 
-    public Transform[] nodesPosition;
+    public Vector3[] nodesPosition;
+    public Quaternion[] nodesRotation;
+    public Vector3[] nodesScale;
     public GameObject nodeAnimationPrefeb;
 
     public TextMeshProUGUI textMeshPro;
@@ -17,7 +19,8 @@ public class GameManager : MonoBehaviour
     public int Level = 1;
     public string musicName = null;
 
-    private List<GameObject> nodeObjList;
+    [HideInInspector]
+    public List<GameObject> nodeObjList = new List<GameObject>();
     private AudioSource audioSource;
     void Awake()
     {
@@ -26,7 +29,13 @@ public class GameManager : MonoBehaviour
         else if (Instance != this)
             Destroy(gameObject);
         DontDestroyOnLoad(gameObject);
-        nodesPosition = new Transform[8];
+        nodesPosition = new Vector3[8];
+        nodesRotation = new Quaternion[8];
+        nodesScale = new Vector3[8];
+
+    }
+    private void Start()
+    {
     }
     private void Update()
     {
@@ -50,6 +59,7 @@ public class GameManager : MonoBehaviour
     }
     void PlayNodes()
     {
+        Debug.Log(nodes.Count);
         for (int i = 0; i < nodes.Count; i++)
         {
             if(audioSource.time > nodes[i].time && !nodesPlayOne[i])
@@ -57,12 +67,14 @@ public class GameManager : MonoBehaviour
                 nodesPlayOne[i] = true;
                 
                 GameObject nodeObj = CreateNodeAnimation();
-                nodeObj.transform.position = nodesPosition[nodes[i].drumNum].position;
-                nodeObj.transform.rotation = nodesPosition[nodes[i].drumNum].rotation;
-                nodeObj.transform.localScale = nodesPosition[nodes[i].drumNum].localScale;
+                nodeObj.transform.position = nodesPosition[nodes[i].drumNum];
+                nodeObj.transform.rotation = nodesRotation[nodes[i].drumNum];
+                nodeObj.transform.localScale = nodesScale[nodes[i].drumNum];
+                nodeObj.GetComponent<NodeAnimation>().num = nodes[i].drumNum;
                 //노드 생성
             }
         }
+
     }
 
     public void LoadMusicInPlayScene()
@@ -80,17 +92,9 @@ public class GameManager : MonoBehaviour
                 return nodeObjList[i];
             }
         }
-        return Instantiate(nodeAnimationPrefeb);
+        return Instantiate(nodeAnimationPrefeb,transform);
     }
-    public void SetNodesPosition(string name, Transform transform)
-    {
-        if(name.Contains("Floor"))
-        {
-            nodesPosition[1].position = transform.position;
-            nodesPosition[1].rotation = transform.rotation;
-            nodesPosition[1].localScale = new Vector3(transform.localScale.x+0.2f, 1, transform.localScale.x + 0.2f);
-        }
-    }
+    
 }
 
 

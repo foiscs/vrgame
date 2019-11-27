@@ -72,12 +72,15 @@ public class ButtenTransitioner : MonoBehaviour, IPointerEnterHandler, IPointerE
 
             child.GetComponent<BoxCollider>().enabled = false;
         }
+
         LoadNodes(GameManager.Instance.musicName);
 
         SceneManager.LoadScene(2);
     }
     public void LoadNodes(string audioName)
     {
+        GameManager.Instance.nodes.Clear();
+        GameManager.Instance.nodesPlayOne.Clear();
         DirectoryInfo dir = new DirectoryInfo(Application.dataPath + "/Resources/Music");
         string path = "";
         foreach (var item in dir.GetDirectories())
@@ -107,6 +110,7 @@ public class ButtenTransitioner : MonoBehaviour, IPointerEnterHandler, IPointerE
                 }
             }
         }
+
     }
     public void ThumbnailChange()
     {
