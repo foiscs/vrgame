@@ -1700,9 +1700,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nodesPlayOne: 
+  nodesPosition: []
+  nodeAnimationPrefeb: {fileID: 6006372449294881262, guid: 1a1d1451133342e46a39799f5b8ea064,
+    type: 3}
   textMeshPro: {fileID: 0}
-  musicName: BTS - IDOL
   Level: 1
+  musicName: BTS - IDOL
 --- !u!1 &5392069333698180565
 GameObject:
   m_ObjectHideFlags: 0
