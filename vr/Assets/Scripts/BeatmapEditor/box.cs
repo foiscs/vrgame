@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class box : MonoBehaviour
 {
+    public int drumNum;
     public int num;
 
     private float startPosX;

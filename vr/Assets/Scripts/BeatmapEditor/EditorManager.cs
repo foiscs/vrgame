@@ -229,6 +229,7 @@ public class EditorManager : MonoBehaviour
                 {
                     Node node = new Node();
                     node.drumNum = br.ReadInt32();
+                    Debug.Log(node.drumNum);
                     node.time = br.ReadSingle();
                     node.play = false;
                     NodeList.Instance.nodes.Add(node);
@@ -236,6 +237,7 @@ public class EditorManager : MonoBehaviour
                     GameObject temp = Instantiate(prefeb,parent);
                     temp.transform.localPosition = new Vector3(Line_X[node.drumNum], node.time);
                     temp.GetComponent<box>().num = NodeList.Instance.nodes.Count - 1;
+                    temp.GetComponent<box>().drumNum = node.drumNum;
                 }
                 catch (EndOfStreamException e)
                 {
