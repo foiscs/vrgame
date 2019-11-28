@@ -9,6 +9,7 @@ public class DrumSetting : MonoBehaviour, IPointerClickHandler, IPointerEnterHan
     public Color32 HoverColor = Color.grey;
     public Color32 DownColor = Color.white;
 
+    public GameObject drumObject;
     public GameObject drumPart;
     private Image image = null;
     private GameObject parent;
@@ -30,7 +31,7 @@ public class DrumSetting : MonoBehaviour, IPointerClickHandler, IPointerEnterHan
         GameObject temp = Instantiate(drumPart,parent.transform);
         temp.transform.localPosition = new Vector3(0,0,0.5f);
         temp.GetComponent<BoxCollider>().enabled = true;
-        drumPart.SetActive(false);
+        drumObject.SetActive(false);
         gameObject.SetActive(false);
     }
 }

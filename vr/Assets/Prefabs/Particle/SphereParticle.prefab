@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 33981893398403332}
   - component: {fileID: 23046924008968002}
   - component: {fileID: 114095204522472810}
-  - component: {fileID: 5730730608907183702}
   - component: {fileID: 7907196931053458196}
   m_Layer: 0
   m_Name: SphereParticle
@@ -98,19 +97,6 @@ MonoBehaviour:
   parent: {fileID: 0}
   _gridSize: {x: 0, y: 0, z: 0}
   _cellSize: 0
---- !u!135 &5730730608907183702
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1117159309430662}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &7907196931053458196
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -117,6 +117,9 @@ public class EditorManager : MonoBehaviour
             inputKey();
             nodeMove();
         }
+
+        if (Input.GetKey(KeyCode.S))
+            saveNodes(audioSource.clip.name, GameObject.Find("Node1"));
     }
     void inputKey()
     {
@@ -125,7 +128,7 @@ public class EditorManager : MonoBehaviour
             addNodes(0);
             playNodeSound(0);
         }
-        if (Input.GetKeyDown(KeyCode.X))
+        if (Input.GetKeyDown(KeyCode.X) || Input.GetKeyDown(KeyCode.N))
         {
             addNodes(1);
             playNodeSound(1);
@@ -164,6 +167,12 @@ public class EditorManager : MonoBehaviour
         {
             startTime = audioSource.time;
         }
+
+        if(Input.GetKey(KeyCode.A))
+        {
+            NodeList.Instance.nodes.Clear();
+            NodeList.Instance.nodesPlayOne.Clear();
+        }
     }
     void addNodes(int num)
     {
@@ -171,13 +180,17 @@ public class EditorManager : MonoBehaviour
         node.drumNum = num;
         node.time = audioSource.time;
         node.play = false;
-        if (NodeList.Instance.nodes.Count == 0 || !NodeList.Instance.nodes.Exists(x => x.time > node.time))
-            NodeList.Instance.nodes.Add(node);
-        else
-        {
-            NodeList.Instance.nodes.IndexOf(node, NodeList.Instance.nodes.FindLastIndex(x => x.time <= node.time) + 1);
-        }
+        //if (NodeList.Instance.nodes.Count == 0 || !NodeList.Instance.nodes.Exists(x => x.time > node.time))
+        //    NodeList.Instance.nodes.Add(node);
+        //else
+        //{
+        //    NodeList.Instance.nodes.IndexOf(node, NodeList.Instance.nodes.FindLastIndex(x => x.time <= node.time) + 1);
+        //}
+
+        NodeList.Instance.nodes.Add(node);
+
         GameObject temp = Instantiate(prefeb, parent);
+        temp.GetComponent<box>().drumNum = num;
         temp.transform.localPosition = new Vector3(Line_X[num], node.time);
     }
     public void save()
@@ -191,6 +204,7 @@ public class EditorManager : MonoBehaviour
 
     public void saveNodes(string audioName)
     {
+        Debug.Log("dsa");
         DirectoryInfo dir = new DirectoryInfo(Application.dataPath + "/Resources/Music");
         string path = "";
         foreach (var item in dir.GetDirectories())
@@ -208,8 +222,30 @@ public class EditorManager : MonoBehaviour
             bw.Write(NodeList.Instance.nodes[i].time);
         }
         bw.Close();
-
     }
+    public void saveNodes(string audioName, GameObject parent)
+    {
+        DirectoryInfo dir = new DirectoryInfo(Application.dataPath + "/Resources/Music");
+        string path = "";
+        foreach (var item in dir.GetDirectories())
+        {
+            if (item.Name == audioName)
+            {
+                path = item.FullName + "/" + audioName + ".beatmap";
+            }
+        }
+        BinaryWriter bw = new BinaryWriter(File.Open(path, FileMode.Create));
+        bw.Write(startTime);
+        for (int i = 0; i < parent.transform.childCount; i++)
+        {
+            bw.Write(parent.transform.GetChild(i).GetComponent<box>().drumNum);
+            bw.Write(parent.transform.GetChild(i).GetComponent<box>().oldPosY);
+            //bw.Write(NodeList.Instance.nodes[i].drumNum);
+            //bw.Write(NodeList.Instance.nodes[i].time);
+        }
+        bw.Close();
+    }
+
     public void LoadNodes(string audioName)
     {
         DirectoryInfo dir = new DirectoryInfo(Application.dataPath + "/Resources/Music");

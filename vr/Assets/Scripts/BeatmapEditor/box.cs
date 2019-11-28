@@ -15,6 +15,22 @@ public class box : MonoBehaviour
     private void Start()
     {
         oldPosY = transform.localPosition.y;
+        if (transform.localPosition.x == -4)
+            drumNum = 0;
+        if (transform.localPosition.x == -3)
+            drumNum = 1;
+        if (transform.localPosition.x == -2)
+            drumNum = 2;
+        if (transform.localPosition.x == -1)
+            drumNum = 3;
+        if (transform.localPosition.x == 1)
+            drumNum = 4;
+        if (transform.localPosition.x == 2)
+            drumNum = 5;
+        if (transform.localPosition.x == 3)
+            drumNum = 6;
+        if (transform.localPosition.x == 4)
+            drumNum = 7;
     }
 
     void Update()

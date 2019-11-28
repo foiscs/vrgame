@@ -15,6 +15,8 @@ public class DrumInfo : MonoBehaviour
     {
         GameManager.Instance.nodesPosition[num] = pos.position;
         GameManager.Instance.nodesRotation[num] = transform.rotation;
+        scale.x += 0.2f;
+        scale.z += 0.2f;
         GameManager.Instance.nodesScale[num] = scale;
     }
 }

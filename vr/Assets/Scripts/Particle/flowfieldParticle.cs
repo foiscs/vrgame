@@ -23,18 +23,4 @@ public class flowfieldParticle : MonoBehaviour {
         Quaternion targetRotation = Quaternion.LookRotation(rotation.normalized);
         transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotateSpeed * Time.deltaTime);
     }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Player")
-        {
-            GetComponent<MeshRenderer>().enabled = false;
-        }
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.tag == "Player")
-        {
-            GetComponent<MeshRenderer>().enabled = true;
-        }
-    }
 }

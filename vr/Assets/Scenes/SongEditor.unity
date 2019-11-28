@@ -2028,6 +2028,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nodesPlayOne: 
+  count: 0
 --- !u!4 &532735655
 Transform:
   m_ObjectHideFlags: 0
