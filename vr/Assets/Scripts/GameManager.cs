@@ -9,19 +9,16 @@ public class GameManager : MonoBehaviour
 {
     public List<Node> nodes = new List<Node>();
     public List<bool> nodesPlayOne = new List<bool>();
-
+    public List<bool> nodeSoundPlayOne = new List<bool>();
     [HideInInspector]
     public Vector3[] nodesPosition;
     [HideInInspector]
     public Quaternion[] nodesRotation;
     [HideInInspector]
     public Vector3[] nodesScale;
+
     public List<List<GameObject>> nodesArray = new List<List<GameObject>>();
-
     public GameObject nodeAnimationPrefeb;
-
-    public TextMeshProUGUI textMeshPro;
-    public static GameManager Instance = null;
 
     public int Level = 1;
     public string musicName = null;
@@ -29,6 +26,11 @@ public class GameManager : MonoBehaviour
     [HideInInspector]
     public List<GameObject> nodeObjList = new List<GameObject>();
     public AudioSource audioSource;
+
+    private GameObject drumSoundList;
+
+    public static GameManager Instance = null;
+
     void Awake()
     {
         if (Instance == null)
@@ -36,14 +38,16 @@ public class GameManager : MonoBehaviour
         else if (Instance != this)
             Destroy(gameObject);
         DontDestroyOnLoad(gameObject);
+        
         nodesPosition = new Vector3[8];
         nodesRotation = new Quaternion[8];
         nodesScale = new Vector3[8];
-
         for (int i = 0; i < 8; i++)
         {
             nodesArray.Add(new List<GameObject>());
         }
+
+        drumSoundList = GameObject.Find("SoundBox");
     }
     private void Update()
     {
@@ -51,7 +55,9 @@ public class GameManager : MonoBehaviour
         {
             if(!audioSource)
                 LoadMusicInPlayScene();
+            
             PlayNodes();
+            PlayAuto();
             for (int i = 0; i < 8; i++)
             {
                 for (int j = 0; j < nodesArray[i].Count; j++)
@@ -64,22 +70,6 @@ public class GameManager : MonoBehaviour
                 }
             }
         }
-        changeLevelText();
-    }
-    void changeLevelText()
-    {
-        if (textMeshPro == null)
-            return;
-        if (Level == 1)
-            textMeshPro.text = "EASY";
-        if (Level == 2)
-            textMeshPro.text = "NORMAL";
-        if (Level == 3)
-            textMeshPro.text = "HEAD";
-        if (Level == 4)
-            textMeshPro.text = "EXPERT";
-        if (Level == 5)
-            textMeshPro.text = "EXPERT+";
     }
     void PlayNodes()
     {
@@ -101,10 +91,21 @@ public class GameManager : MonoBehaviour
         }
 
     }
+    void PlayAuto()
+    {
+        for (int i = 0; i < nodes.Count; i++)
+        {
+            if (Level == 0 &&audioSource.time >= nodes[i].time && !nodeSoundPlayOne[i])
+            {
+                nodeSoundPlayOne[i] = true;
+                drumSoundList.transform.GetChild(nodes[i].drumNum).GetComponent<AudioSource>().Play();
+            }
+        }
+    }
     public void HitDrum(int num)
     {
         if(nodesArray[num].Count!=0)
-            nodesArray[num].RemoveAt(0);
+            nodesArray[num][0].SetActive(false);
     }
     public void LoadMusicInPlayScene()
     {
@@ -121,7 +122,9 @@ public class GameManager : MonoBehaviour
                 return nodeObjList[i];
             }
         }
-        return Instantiate(nodeAnimationPrefeb,transform);
+        GameObject temp = Instantiate(nodeAnimationPrefeb, transform);
+        nodeObjList.Add(temp);
+        return temp;
     }
     
 }

@@ -69,14 +69,28 @@ public class ButtenTransitioner : MonoBehaviour, IPointerEnterHandler, IPointerE
         for (int i = 0; i < GameManager.Instance.transform.childCount; i++)
         {
             GameObject child = GameManager.Instance.transform.GetChild(i).gameObject;
-
-            child.GetComponent<BoxCollider>().enabled = false;
+            if(child.GetComponent<BoxCollider>())
+                child.GetComponent<BoxCollider>().enabled = false;
         }
 
         LoadNodes(GameManager.Instance.musicName);
-
+        GameManager.Instance.Level = 1;
         SceneManager.LoadScene(2);
     }
+    public void TutorialButton()
+    {
+        for (int i = 0; i < GameManager.Instance.transform.childCount; i++)
+        {
+            GameObject child = GameManager.Instance.transform.GetChild(i).gameObject;
+            if (child.GetComponent<BoxCollider>())
+                child.GetComponent<BoxCollider>().enabled = false;
+        }
+
+        LoadNodes(GameManager.Instance.musicName);
+        GameManager.Instance.Level = 0;
+        SceneManager.LoadScene(2);
+    }
+
     public void LoadNodes(string audioName)
     {
         GameManager.Instance.nodes.Clear();
@@ -102,6 +116,7 @@ public class ButtenTransitioner : MonoBehaviour, IPointerEnterHandler, IPointerE
                     node.play = false;
                     GameManager.Instance.nodes.Add(node);
                     GameManager.Instance.nodesPlayOne.Add(false);
+                    GameManager.Instance.nodeSoundPlayOne.Add(false);
                 }
                 catch (EndOfStreamException e)
                 {

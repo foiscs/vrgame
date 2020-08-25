@@ -9,7 +9,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using UnityEngine.Networking;
-
+using UnityEngine.SceneManagement;
 
 public class EditorManager : MonoBehaviour
 {
@@ -118,9 +118,11 @@ public class EditorManager : MonoBehaviour
             nodeMove();
         }
 
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.S) && GameObject.Find("Node1"))
             saveNodes(audioSource.clip.name, GameObject.Find("Node1"));
-    }
+        else if(Input.GetKey(KeyCode.S))
+            saveNodes(audioSource.clip.name, parent.gameObject);
+    }   
     void inputKey()
     {
         if (Input.GetKeyDown(KeyCode.Z))
@@ -173,6 +175,21 @@ public class EditorManager : MonoBehaviour
             NodeList.Instance.nodes.Clear();
             NodeList.Instance.nodesPlayOne.Clear();
         }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (NodeAddCanvas.gameObject.activeSelf)
+            {
+                NodeList.Instance.nodes.Clear();
+                NodeList.Instance.nodesPlayOne.Clear();
+                SceneManager.LoadScene(1);
+            }
+            else
+            {
+                NodeList.Instance.nodes.Clear();
+                NodeList.Instance.nodesPlayOne.Clear();
+                SceneManager.LoadScene(0);
+            }
+        }
     }
     void addNodes(int num)
     {
@@ -180,12 +197,6 @@ public class EditorManager : MonoBehaviour
         node.drumNum = num;
         node.time = audioSource.time;
         node.play = false;
-        //if (NodeList.Instance.nodes.Count == 0 || !NodeList.Instance.nodes.Exists(x => x.time > node.time))
-        //    NodeList.Instance.nodes.Add(node);
-        //else
-        //{
-        //    NodeList.Instance.nodes.IndexOf(node, NodeList.Instance.nodes.FindLastIndex(x => x.time <= node.time) + 1);
-        //}
 
         NodeList.Instance.nodes.Add(node);
 
